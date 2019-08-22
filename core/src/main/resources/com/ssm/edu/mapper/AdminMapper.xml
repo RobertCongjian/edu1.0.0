@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.edu.mapper.AdminMapper">
+  <resultMap id="adminResultMap" type="com.ssm.edu.pojo.Admin">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="delFlag" jdbcType="BIT" property="delFlag" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateBy" jdbcType="VARCHAR" property="updateBy" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="realName" jdbcType="VARCHAR" property="realName" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="provinceId" jdbcType="INTEGER" property="provinceId" />
+    <result column="cityId" jdbcType="INTEGER" property="cityId" />
+    <result column="districtId" jdbcType="INTEGER" property="districtId" />
+    <result column="addr" jdbcType="VARCHAR" property="addr" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="adminState" jdbcType="TINYINT" property="adminState" />
+  </resultMap>
+
+</mapper>

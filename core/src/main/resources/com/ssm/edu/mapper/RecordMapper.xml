@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.edu.mapper.RecordMapper">
+  <resultMap id="recordResultMap" type="com.ssm.edu.pojo.Record">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="delFlag" jdbcType="BIT" property="delFlag" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateBy" jdbcType="VARCHAR" property="updateBy" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="userName" jdbcType="VARCHAR" property="username" />
+    <result column="getTime" jdbcType="TIMESTAMP" property="getTime" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+  </resultMap>
+
+</mapper>

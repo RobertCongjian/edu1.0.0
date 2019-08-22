@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.edu.mapper.UserMapper">
+  <resultMap id="userResultMap" type="com.ssm.edu.pojo.User">
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="delFlag" jdbcType="BIT" property="delFlag" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="createBy" jdbcType="VARCHAR" property="createBy" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateBy" jdbcType="VARCHAR" property="updateBy" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="birthday" jdbcType="DATE" property="birthday" />
+    <result column="gender" jdbcType="TINYINT" property="gender" />
+    <result column="provinceId" jdbcType="INTEGER" property="provinceId" />
+    <result column="cityId" jdbcType="INTEGER" property="cityId" />
+    <result column="districtId" jdbcType="INTEGER" property="districtId" />
+    <result column="addr" jdbcType="VARCHAR" property="addr" />
+    <result column="score" jdbcType="INTEGER" property="score" />
+    <result column="schoolsId" jdbcType="VARCHAR" property="schoolsId" />
+    <result column="userType" jdbcType="TINYINT" property="userType" />
+  </resultMap>
+
+</mapper>

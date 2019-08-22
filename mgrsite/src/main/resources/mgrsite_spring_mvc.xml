@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <import resource="classpath:applicationContext.xml"/>
+
+    <!--1.开启Springioc 自动扫描注解包  只对mvc的包做扫描  -->
+    <context:component-scan base-package="com.ssm.mgrsite.controller"/>
+
+    <!--2. 开启注解，对jackson数据支持 -->
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+    <!-- 静态资源需要单独处理，不需要dispatcher servlet -->
+    <!--    <mvc:resources location="/css/" mapping="/css/**"/>-->
+    <!--    <mvc:resources location="/jquery/" mapping="/jquery/**"/>-->
+    <!-- 定义视图解析器 -->
+    <!-- 找到Web工程/WEB-INF/JSP文件夹，且文件结尾为jsp的文件作为映射 -->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+          p:prefix="/WEB-INF/jsp/" p:suffix=".jsp" />
+
+    <!-- 如果有配置数据库事务,需要开启注解事务的，需要开启这段代码 -->
+    <!--    <tx:annotation-driven transaction-manager="transactionManager" />-->
+
+    <!--配置multipartResolver 处理文件上传-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/> <!--默认编码（ISO-8859-1）-->
+        <property name="maxInMemorySize" value="10240"/> <!--最大内存大小（10240）-->
+        <property name="maxUploadSize" value="-1"/> <!--最大文件大小，单位是字节，-1为无限制-->
+    </bean>
+
+
+
+    <!--注册Json消息转换器-->
+    <bean
+            class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="jsonConverter"/>
+            </list>
+        </property>
+    </bean>
+    <bean id="jsonConverter"
+          class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>application/json;charset=UTF-8</value>
+                <value>text/plain;charset=utf-8</value>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

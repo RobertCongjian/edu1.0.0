@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.edu.mapper.DesigncourseMapper">
+    <resultMap id="designCourseResultMap" type="com.ssm.edu.pojo.DesignCourse">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="delFlag" jdbcType="BIT" property="delFlag"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="createBy" jdbcType="VARCHAR" property="createBy"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="updateBy" jdbcType="VARCHAR" property="updateBy"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="courseId" jdbcType="VARCHAR" property="courseId"/>
+        <result column="classesId" jdbcType="VARCHAR" property="classesId"/>
+        <result column="startDate" jdbcType="DATE" property="startDate"/>
+        <result column="beginTime" jdbcType="TIMESTAMP" property="beginTime"/>
+        <result column="endTime" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="classHour" jdbcType="INTEGER" property="classHour"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+    </resultMap>
+
+</mapper>
